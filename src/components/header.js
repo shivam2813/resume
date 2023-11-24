@@ -17,7 +17,7 @@ function Header({ onSelectComponent }) {
               display: 'flex',
               gap: 2,
               justifyContent: 'center',
-              flexDirection: { xs: 'column', sm: 'row' },
+              margin:'0 2%',
               alignItems: 'center',
             }}
           >
