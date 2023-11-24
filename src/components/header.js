@@ -23,21 +23,21 @@ function Header({ onSelectComponent }) {
           >
             <Typography
               variant="p"
-              sx={{ '&:hover': { color: 'black' } }}
+              sx={{ '&:hover': { color: 'black' },cursor: 'pointer' }}
               onClick={() => onSelectComponent('Top')}
             >
               About
             </Typography>
             <Typography
               variant="p"
-              sx={{ '&:hover': { color: 'black' } }}
+              sx={{ '&:hover': { color: 'black' } ,cursor: 'pointer'}}
               onClick={() => onSelectComponent('Projects')}
             >
               Projects
             </Typography>
             <Typography
               variant="p"
-              sx={{ '&:hover': { color: 'black'} }}
+              sx={{ '&:hover': { color: 'black'},cursor: 'pointer' }}
               onClick={() => onSelectComponent('Experience')}
             >
               Experience
