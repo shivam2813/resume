@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/header';
+import Top from './components/top';
+import Projects from './components/projects';
+import Footer from './components/footer';
+import Experience from './components/experience'
 
 function App() {
+  const [selectedComponent, setSelectedComponent] = useState('Top');
+
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case 'Top':
+        return <Top/>
+      case 'Experience':
+        return <Experience/>;
+      case 'Projects':
+        return <Projects/>;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header onSelectComponent={setSelectedComponent} />
+      {renderComponent()}
+      <Footer/>
     </div>
   );
 }
