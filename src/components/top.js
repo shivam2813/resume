@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Grid, Typography, Paper } from '@mui/material';
 import Skills from './skills';
+import image from '../assets/myImage.jpeg'
 function Top() {
   return (
     <Container sx={{ mt: 10 }}>
@@ -20,7 +21,8 @@ function Top() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
-              src="https://i.ibb.co/k0CmfBk/shivam-pic-for-website.jpg"
+              src={image}
+              // src="https://i.ibb.co/k0CmfBk/shivam-pic-for-website.jpg"
               alt="shivam-pic-for-website"
               style={{objectFit: 'contain', height: '300px', width: '100%', borderRadius: '8px' }}
             />
