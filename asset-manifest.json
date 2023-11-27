@@ -1,19 +1,20 @@
 {
   "files": {
     "main.css": "/resume/static/css/main.e6c13ad2.css",
-    "main.js": "/resume/static/js/main.91229c36.js",
+    "main.js": "/resume/static/js/main.737a343c.js",
     "static/media/CAL-ASSISTANT-1.png": "/resume/static/media/CAL-ASSISTANT-1.fb9e50ed995a2164b1e8.png",
     "static/media/numberplate.png": "/resume/static/media/numberplate.0d2be639646059139609.png",
+    "static/media/myImage.jpeg": "/resume/static/media/myImage.f3d93fc9b22d04e08410.jpeg",
     "static/media/todo-loggedin.png": "/resume/static/media/todo-loggedin.061f2e4994895656bcc7.png",
     "static/media/microchip.png": "/resume/static/media/microchip.697194c4c8a47e78160f.png",
     "static/media/backend.png": "/resume/static/media/backend.a85e83f37fcd4f2aaa40.png",
     "static/media/design.png": "/resume/static/media/design.a6917fccf02e67a9e18f.png",
     "index.html": "/resume/index.html",
     "main.e6c13ad2.css.map": "/resume/static/css/main.e6c13ad2.css.map",
-    "main.91229c36.js.map": "/resume/static/js/main.91229c36.js.map"
+    "main.737a343c.js.map": "/resume/static/js/main.737a343c.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.91229c36.js"
+    "static/js/main.737a343c.js"
   ]
 }
