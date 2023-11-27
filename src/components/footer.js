@@ -11,10 +11,7 @@ const Footer = () => {
               Contact Information
             </Typography>
             <Typography>
-              Email: your.email@example.com
-            </Typography>
-            <Typography>
-              Phone: +123 456 7890
+              Email: shivamarora1314@gmail.com
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
