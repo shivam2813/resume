@@ -13,7 +13,7 @@ function Top() {
               <span style={{ color: '#ffb400' }}>Software Developer</span>
             </Typography>
             <Typography variant="body1" color="#767676" mt={2}>
-              An experienced software developer with a passion for solving complex problems and building innovative solutions. At EndureAir Systems, I enhanced drone communication systems, integrated payload mechanisms, and developed tools that improved operational efficiency. Previously, at MattsenKumar LLC, I led the creation of an in-house Authenticator and data extraction tools, boosting team productivity by 25%. With expertise in Python, React.js, AWS, and IoT, I’m always looking for new challenges to tackle and improve workflows.
+            with experience in building and optimizing complex systems. I specialize in Python, React.js, IoT, and AWS, with a strong background in developing solutions that improve efficiency and drive innovation. My expertise includes building systems for drone communication, payload handling, and data analysis tools. I excel in problem-solving, enhancing operational workflows, and reducing processing times, always striving to create impactful, scalable solutions.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
