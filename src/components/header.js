@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Button, Container, Toolbar, Typography, Box } from '@mui/material';
+import { AppBar, Button, Container, Toolbar, Typography, Box, ButtonBase } from '@mui/material';
 
 function Header({ onSelectComponent }) {
   const handleLinkedInClick = () => {
@@ -11,7 +11,7 @@ function Header({ onSelectComponent }) {
     <AppBar position="sticky" sx={{ backgroundColor: '#ffb400' }}>
       <Container>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h6">Portfolio</Typography>
+          <Typography variant="h5">Portfolio</Typography>
           <Box
             sx={{
               display: 'flex',
@@ -21,27 +21,33 @@ function Header({ onSelectComponent }) {
               alignItems: 'center',
             }}
           >
+            <ButtonBase>
             <Typography
-              variant="p"
+              variant="subtitle1"
               sx={{ '&:hover': { color: 'black' },cursor: 'pointer' }}
               onClick={() => onSelectComponent('Top')}
             >
               About
             </Typography>
+            </ButtonBase>
+            <ButtonBase>
             <Typography
-              variant="p"
+              variant="subtitle1"
               sx={{ '&:hover': { color: 'black' } ,cursor: 'pointer'}}
               onClick={() => onSelectComponent('Projects')}
             >
               Projects
             </Typography>
+            </ButtonBase>
+            <ButtonBase>
             <Typography
-              variant="p"
+              variant="subtitle1"
               sx={{ '&:hover': { color: 'black'},cursor: 'pointer' }}
               onClick={() => onSelectComponent('Experience')}
             >
               Experience
             </Typography>
+            </ButtonBase>
           </Box>
           <Button
             variant="contained"
