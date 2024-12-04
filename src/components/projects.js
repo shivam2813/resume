@@ -26,7 +26,7 @@ const projectsData = [
 const Projects = () => {
   return (
     <Container style={{ marginTop: '50px' }}>
-      <Typography variant='h5' component='h2' align="center" style={{ margin: '5% 0' }} gutterBottom>
+      <Typography variant='h4' component='h2' align="center" style={{ margin: '5% 0' }} gutterBottom>
         PROJECTS
       </Typography>
       <Grid container spacing={3}>
@@ -38,10 +38,10 @@ const Projects = () => {
                 <Typography variant="h5" component="div">
                   {project.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="subtitle1" color="text.secondary" sx={{marginLeft:'1rem',marginTop:'1rem',color:'black'}}>
                   {project.description}
                 </Typography>
-                <Button variant="contained" href={project.link} sx={{backgroundColor:'#ffb400', color:'black','&:hover':{backgroundColor:'white'}}} target="_blank" rel="noopener noreferrer">
+                <Button variant="contained" href={project.link} sx={{backgroundColor:'#ffb400',marginTop:'2rem', color:'black','&:hover':{backgroundColor:'white',color:'#ffb400'}}} target="_blank" rel="noopener noreferrer">
                   Go to Project
                 </Button>
               </CardContent>
