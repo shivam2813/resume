@@ -69,6 +69,7 @@ const Projects = () => {
                   variant="contained"
                   href={project.link}
                   target="_blank"
+                  aria-label={`View Project: ${project.name}`}
                   rel="noopener noreferrer"
                   sx={{
                     backgroundColor: "#ffb400",

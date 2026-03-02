@@ -1,9 +1,10 @@
+import React from "react";
 import Header from "./components/header";
 import Top from "./components/top";
-import Projects from "./components/projects";
 import Footer from "./components/footer";
-import Experience from "./components/experience";
 import Skills from "./components/skills";
+const Projects = React.lazy(() => import("./components/projects"));
+const Experience = React.lazy(() => import("./components/experience"));
 
 function App() {
   return (

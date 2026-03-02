@@ -53,6 +53,8 @@ function Top() {
             src={image}
             alt="Shivam Arora"
             loading="lazy"
+            width={320}
+            height={450}
             sx={{
               width: { xs: "80%", md: "100%" },
               maxWidth: 380,

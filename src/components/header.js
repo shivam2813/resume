@@ -64,6 +64,7 @@ function Header() {
                   key={index}
                   component="a"
                   href={item.link}
+                  aria-label={`Open ${item.label} menu`}
                   sx={{
                     textDecoration: "none",
                     color: "black",
@@ -85,6 +86,7 @@ function Header() {
                 variant="contained"
                 href="https://www.linkedin.com/in/shivamarora1314/"
                 target="_blank"
+                aria-label="Contact Me"
                 sx={{
                   backgroundColor: "white",
                   color: "black",
@@ -120,6 +122,7 @@ function Header() {
               <ListItem key={index} disablePadding>
                 <ListItemButton
                   component="a"
+                  aria-label={`Open ${item.label} Button`}
                   href={item.link}
                   onClick={() => setOpen(false)}
                 >
@@ -134,6 +137,7 @@ function Header() {
                 href="https://www.linkedin.com/in/shivamarora1314/"
                 target="_blank"
                 onClick={() => setOpen(false)}
+                aria-label="Open Contact"
               >
                 <ListItemText primary="Contact Me" />
               </ListItemButton>
