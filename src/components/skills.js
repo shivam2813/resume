@@ -9,14 +9,15 @@ const Skills = () => {
         "JavaScript (ES6+)",
         "HTML5",
         "CSS3",
-        "Tailwind",
         "Material UI",
+        "Hooks",
+        "Context API",
         "Performance Optimization",
         "Component Architecture",
       ],
     },
     {
-      category: "Backend & Systems",
+      category: "Backend & APIs",
       skills: [
         "Node.js",
         "Express",
@@ -24,18 +25,12 @@ const Skills = () => {
         "REST APIs",
         "MongoDB",
         "Electron",
-        "Authentication",
+        "Flask",
       ],
     },
     {
-      category: "UAV & Embedded Systems",
-      skills: [
-        "MAVLink",
-        "Jetson",
-        "GPIO / PWM",
-        "Ground Control Systems",
-        "Telemetry Processing",
-      ],
+      category: "Systems",
+      skills: ["Linux", "SSH", "Process Management"],
     },
   ];
 

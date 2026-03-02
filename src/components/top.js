@@ -5,7 +5,6 @@ function Top() {
   return (
     <Container sx={{ mt: { xs: 8, md: 14 } }}>
       <Grid container alignItems="center" spacing={6}>
-        {/* Text Section */}
         <Grid item xs={12} md={6}>
           <Typography
             variant="h2"
@@ -27,7 +26,7 @@ function Top() {
               color: "#2b2b2b",
             }}
           >
-            Software Developer & Systems Engineer
+            Software Developer
           </Typography>
 
           <Typography
