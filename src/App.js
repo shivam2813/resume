@@ -1,31 +1,31 @@
-import React, { useState } from 'react';
-import Header from './components/header';
-import Top from './components/top';
-import Projects from './components/projects';
-import Footer from './components/footer';
-import Experience from './components/experience'
+import Header from "./components/header";
+import Top from "./components/top";
+import Projects from "./components/projects";
+import Footer from "./components/footer";
+import Experience from "./components/experience";
+import Skills from "./components/skills";
 
 function App() {
-  const [selectedComponent, setSelectedComponent] = useState('Top');
-
-  const renderComponent = () => {
-    switch (selectedComponent) {
-      case 'Top':
-        return <Top/>
-      case 'Experience':
-        return <Experience/>;
-      case 'Projects':
-        return <Projects/>;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className='App'>
-      <Header onSelectComponent={setSelectedComponent} />
-      {renderComponent()}
-      <Footer/>
+    <div className="App">
+      <Header />
+      <main>
+        <section id="home">
+          <Top />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="experience">
+          <Experience />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }

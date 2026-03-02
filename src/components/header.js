@@ -1,68 +1,147 @@
-import React from 'react';
-import { AppBar, Button, Container, Toolbar, Typography, Box, ButtonBase } from '@mui/material';
+import {
+  AppBar,
+  Button,
+  Container,
+  Toolbar,
+  Typography,
+  Box,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
-function Header({ onSelectComponent }) {
-  const handleLinkedInClick = () => {
-    // Replace 'your-linkedin-profile' with your actual LinkedIn profile URL
-    window.location.href = 'https://www.linkedin.com/in/shivamarora1314/';
-  };
+function Header() {
+  const [open, setOpen] = useState(false);
+
+  const navItems = [
+    { label: "About", link: "#home" },
+    { label: "Projects", link: "#projects" },
+    { label: "Experience", link: "#experience" },
+    { label: "Skills", link: "#skills" },
+  ];
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#ffb400' }}>
-      <Container>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h5">Portfolio</Typography>
-          <Box
+    <>
+      <AppBar
+        position="sticky"
+        sx={{
+          backgroundColor: "#ffb400",
+          boxShadow: "none",
+        }}
+      >
+        <Container>
+          <Toolbar
             sx={{
-              display: 'flex',
-              gap: 2,
-              justifyContent: 'center',
-              margin:'0 2%',
-              alignItems: 'center',
+              display: "flex",
+              justifyContent: "space-between",
+              minHeight: { xs: 64, md: 68 },
             }}
           >
-            <ButtonBase>
             <Typography
-              variant="subtitle1"
-              sx={{ '&:hover': { color: 'black' },cursor: 'pointer' }}
-              onClick={() => onSelectComponent('Top')}
+              variant="h5"
+              sx={{
+                fontWeight: 600,
+                letterSpacing: 1,
+              }}
             >
-              About
+              Portfolio
             </Typography>
-            </ButtonBase>
-            <ButtonBase>
-            <Typography
-              variant="subtitle1"
-              sx={{ '&:hover': { color: 'black' } ,cursor: 'pointer'}}
-              onClick={() => onSelectComponent('Projects')}
+
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: 4,
+                alignItems: "center",
+              }}
             >
-              Projects
-            </Typography>
-            </ButtonBase>
-            <ButtonBase>
-            <Typography
-              variant="subtitle1"
-              sx={{ '&:hover': { color: 'black'},cursor: 'pointer' }}
-              onClick={() => onSelectComponent('Experience')}
+              {navItems.map((item, index) => (
+                <Typography
+                  key={index}
+                  component="a"
+                  href={item.link}
+                  sx={{
+                    textDecoration: "none",
+                    color: "black",
+                    fontWeight: 500,
+                    fontSize: "1rem",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      color: "white",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              ))}
+
+              <Button
+                variant="contained"
+                href="https://www.linkedin.com/in/shivamarora1314/"
+                target="_blank"
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  fontWeight: 600,
+                  borderRadius: 3,
+                  px: 3,
+                  boxShadow: "none",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    backgroundColor: "black",
+                    color: "white",
+                  },
+                }}
+              >
+                Contact Me
+              </Button>
+            </Box>
+
+            <IconButton
+              sx={{ display: { xs: "flex", md: "none" }, color: "black" }}
+              onClick={() => setOpen(true)}
             >
-              Experience
-            </Typography>
-            </ButtonBase>
-          </Box>
-          <Button
-            variant="contained"
-            sx={{
-              color: 'black',
-              backgroundColor: 'white',
-              '&:hover': { backgroundColor: 'black', color: 'white' },
-            }}
-            onClick={handleLinkedInClick}
-          >
-            Contact Me
-          </Button>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </Container>
+      </AppBar>
+
+      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+        <Box sx={{ width: 250 }}>
+          <List>
+            {navItems.map((item, index) => (
+              <ListItem key={index} disablePadding>
+                <ListItemButton
+                  component="a"
+                  href={item.link}
+                  onClick={() => setOpen(false)}
+                >
+                  <ListItemText primary={item.label} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+
+            <ListItem disablePadding>
+              <ListItemButton
+                component="a"
+                href="https://www.linkedin.com/in/shivamarora1314/"
+                target="_blank"
+                onClick={() => setOpen(false)}
+              >
+                <ListItemText primary="Contact Me" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
+    </>
   );
 }
 

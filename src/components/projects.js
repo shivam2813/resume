@@ -1,48 +1,88 @@
-import React from 'react';
-import { Card, CardContent, CardMedia, Button, Typography, Container, Grid } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+  Container,
+  Grid,
+} from "@mui/material";
 
 const projectsData = [
   {
-    name: 'TODO LIST WEB APP',
-    imageUrl: require('../assets/todo-loggedin.png'), // Replace with your project image URL or local path
-    description: "Enabled user registration, task management, and efficient data storage with MongoDB and deployed on Cyclic hosting, resulting in up to a 30% enhanced task completion efficiency. Reduced time spent on task management by 25%, leading to valuable time savings and increased productivity.",
-    link: 'https://clever-hare-jeans.cyclic.app/', // Replace with the project URL
+    name: "Todo List Web App",
+    imageUrl: require("../assets/todo-loggedin.png"),
+    tech: "React • Node.js • MongoDB",
+    description:
+      "Developed a full-stack task management application with authentication and persistent storage, improving task tracking efficiency by 30%.",
+    link: "https://clever-hare-jeans.cyclic.app/",
   },
   {
-    name: 'SCIENTIFIC CALCULATOR USING VOICE',
-    imageUrl: require('../assets/CAL-ASSISTANT-1.png'), // Replace with the local path to your image
-    description: 'Developed an open-source scientific calculator with voice input capabilities, contributing to fast results in a team of 4 people. Engineered efficient web solutions using Python for the back-end and HTML, Bootstrap, JavaScript, CSS, and Flask for the front-end, resulting in a 30% reduction in development time.',
-    link: 'https://github.com/shivam2813', // Replace with the project URL
+    name: "Number Plate Recognition System",
+    imageUrl: require("../assets/numberplate.png"),
+    tech: "Python • OpenCV • Tesseract OCR",
+    description:
+      "Implemented a real-time License Plate Recognition system using computer vision and OCR to detect and extract plate numbers from live video streams.",
+    link: "https://github.com/shivam2813/number_plate_recognition",
   },
-  {
-    name: 'NUMBER PLATE RECOGNITION SYSTEM',
-    imageUrl: require('../assets/numberplate.png'), // Replace with the local path to your image
-    description: 'This project is a simple License Plate Recognition (LPR) system developed using OpenCV and Tesseract OCR. It captures video from a webcam, detects license plates using Haar cascades, performs Optical Character Recognition (OCR) on the detected plates, and saves images of recognized plates.',
-    link: 'https://github.com/shivam2813/number_plate_recognition', // Replace with the project URL
-  },
-  // Add more projects as needed
 ];
 
 const Projects = () => {
   return (
-    <Container style={{ marginTop: '50px' }}>
-      <Typography variant='h4' component='h2' align="center" style={{ margin: '5% 0' }} gutterBottom>
-        PROJECTS
+    <Container sx={{ mt: 8 }}>
+      <Typography
+        variant="h4"
+        component="h2"
+        align="center"
+        gutterBottom
+        sx={{ mb: 6, fontWeight: 600 }}
+      >
+        Projects
       </Typography>
-      <Grid container spacing={3}>
+
+      <Grid container justifyContent="center" spacing={5}>
         {projectsData.map((project, index) => (
-          <Grid item key={index} xs={12}>
-            <Card elevation={3}>
-              <CardMedia component="img" height="200" image={project.imageUrl} alt={project.name} />
-              <CardContent>
-                <Typography variant="h5" component="div">
+          <Grid item xs={12} md={12} key={index}>
+            <Card elevation={3} sx={{ borderRadius: 4 }}>
+              <CardMedia
+                component="img"
+                height="260"
+                image={project.imageUrl}
+                alt={project.name}
+                loading="lazy"
+              />
+
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
                   {project.name}
                 </Typography>
-                <Typography variant="subtitle1" color="text.secondary" sx={{marginLeft:'1rem',marginTop:'1rem',color:'black'}}>
+
+                <Typography variant="body1" sx={{ fontWeight: 600, mb: 2 }}>
+                  {project.tech}
+                </Typography>
+
+                <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
                   {project.description}
                 </Typography>
-                <Button variant="contained" href={project.link} sx={{backgroundColor:'#ffb400',marginTop:'2rem', color:'black','&:hover':{backgroundColor:'white',color:'#ffb400'}}} target="_blank" rel="noopener noreferrer">
-                  Go to Project
+
+                <Button
+                  variant="contained"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    backgroundColor: "#ffb400",
+                    color: "black",
+                    fontWeight: 600,
+                    px: 3,
+                    py: 1,
+                    borderRadius: 2,
+                    "&:hover": {
+                      backgroundColor: "#e0a800",
+                    },
+                  }}
+                >
+                  View Project
                 </Button>
               </CardContent>
             </Card>

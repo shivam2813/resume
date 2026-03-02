@@ -1,45 +1,99 @@
-// Experience.js
-
-import React from 'react';
-import CustomCard from './card';
-import { Container, Grid, Typography, Box } from '@mui/material';
-import image3 from '../assets/microchip.png'
-import image1 from '../assets/design.png'
-import image2 from '../assets/backend.png'
+import { Container, Grid, Typography, Box, Chip } from "@mui/material";
 
 const Skills = () => {
-  const cardData = [
+  const skillsData = [
     {
-      title: 'Front-end Web Development',
-      description: 'Description for Job 1',
-      imageUrl: image1,
+      category: "Frontend Engineering",
+      skills: [
+        "React",
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3",
+        "Tailwind",
+        "Material UI",
+        "Performance Optimization",
+        "Component Architecture",
+      ],
     },
     {
-      title: 'Backend Development',
-      description: 'Description for Job 2',
-      imageUrl: image2,
+      category: "Backend & Systems",
+      skills: [
+        "Node.js",
+        "Express",
+        "Python",
+        "REST APIs",
+        "MongoDB",
+        "Electron",
+        "Authentication",
+      ],
     },
     {
-      title: 'AI Integration',
-      description: 'Description for Job 3',
-      imageUrl: image3,
+      category: "UAV & Embedded Systems",
+      skills: [
+        "MAVLink",
+        "Jetson",
+        "GPIO / PWM",
+        "Ground Control Systems",
+        "Telemetry Processing",
+      ],
     },
   ];
 
   return (
-    <Container align='center'>
-      <Box display="flex" flexDirection="column" alignItems="center">
-        <Typography variant="h5" component="h2" align="center" style={{ margin: '5% 0' }} gutterBottom>
-          SKILLS
-        </Typography>
-        <Grid container spacing={8} justifyContent="center">
-          {cardData.map((data, index) => (
-            <Grid item key={index} xs={12} sm={4}>
-              <CustomCard title={data.title} imageUrl={data.imageUrl} />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+    <Container sx={{ mt: 8, mb: 15 }}>
+      <Typography
+        variant="h4"
+        component="h2"
+        align="center"
+        sx={{ mb: 6, fontWeight: 600 }}
+      >
+        Skills
+      </Typography>
+
+      <Grid container spacing={6} justifyContent="center">
+        {skillsData.map((section, index) => (
+          <Grid item xs={12} md={4} key={index}>
+            <Box
+              sx={{
+                p: 5,
+                borderRadius: 4,
+                boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+                height: "100%",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-6px)",
+                  boxShadow: "0 15px 40px rgba(0,0,0,0.12)",
+                },
+              }}
+            >
+              <Typography variant="h5" sx={{ fontWeight: 700, mb: 3 }}>
+                {section.category}
+              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1.5,
+                }}
+              >
+                {section.skills.map((skill, i) => (
+                  <Chip
+                    key={i}
+                    label={skill}
+                    sx={{
+                      fontSize: "0.95rem",
+                      fontWeight: 500,
+                      px: 1,
+                      backgroundColor: "#f5f5f5",
+                    }}
+                  />
+                ))}
+              </Box>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   );
 };
