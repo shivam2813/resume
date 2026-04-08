@@ -8,21 +8,21 @@ const experience = [
     period: "Feb 2024 – Present",
     tech: ["React", "Electron", "JavaScript", "Context API", "Linux"],
     bullets: [
-      "Worked on desktop applications using React + Electron with multi-window setups",
-      "Handled large datasets (~1,300+ entries) and improved UI performance significantly",
-      "Managed IPC communication and window lifecycle in Electron apps",
-      "Built real-time dashboards for UAV ground control systems",
+      "Built production-grade desktop apps using React + Electron with multi-window architecture",
+      "Virtualized 1,300+ data entries, boosting UI performance by ~70% and eliminating crashes",
+      "Managed IPC communication, window lifecycle, and routing across complex Electron builds",
+      "Integrated real-time APIs into live dashboards used in UAV ground control systems",
     ],
   },
   {
     company: "MattsenKumar LLC",
     role: "Software Developer",
     period: "Sept 2023 – Feb 2024",
-    tech: ["React", "Flask", "REST APIs"],
+    tech: ["React", "Flask", "REST APIs", "LangChain"],
     bullets: [
-      "Built chatbot UI using LangChain integration",
-      "Worked on internal authentication system frontend",
-      "Developed dashboards for client-facing tools",
+      "Built LangChain chatbot frontend that increased employee engagement by 60%",
+      "Led frontend of in-house auth system, reducing mobile dependency and lifting productivity 25%",
+      "Developed real-time data visualization dashboards for client-facing applications",
     ],
   },
   {
@@ -31,9 +31,9 @@ const experience = [
     period: "Feb 2023 – Sept 2023",
     tech: ["React", "Python", "Flask"],
     bullets: [
-      "Built attendance management features",
-      "Improved frontend data handling and reduced errors",
-      "Contributed to UI improvements across modules",
+      "Built Attendance Management System with focus on usability and performance",
+      "Reduced reporting errors by 20% through optimized frontend data flow",
+      "Collaborated on UI redesigns to improve overall user experience",
     ],
   },
 ];

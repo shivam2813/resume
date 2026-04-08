@@ -12,21 +12,23 @@ const StatItem = ({ num, suffix, label }) => {
       ([entry]) => {
         if (entry.isIntersecting && !triggered.current) {
           triggered.current = true;
-          let start = 0;
-          const step = num / (1500 / 16);
-          const timer = setInterval(() => {
-            start += step;
-            if (start >= num) {
-              setCount(num);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-          observer.disconnect();
+          setTimeout(() => {
+            let start = 0;
+            const step = num / (1500 / 16);
+            const timer = setInterval(() => {
+              start += step;
+              if (start >= num) {
+                setCount(num);
+                clearInterval(timer);
+              } else {
+                setCount(Math.floor(start));
+              }
+            }, 16);
+            observer.disconnect();
+          }, 200);
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.8 },
     );
     if (ref.current) {
       observer.observe(ref.current);
