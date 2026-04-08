@@ -1,0 +1,227 @@
+/* SECTION */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 5vw;
+  position: relative;
+  overflow: hidden;
+  /* color: var(--text);
+  max-width: 100%;
+  padding-left: 5vw;
+  padding-right: 5vw; */
+}
+
+/* GRID BACKGROUND */
+#hero::after {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(163, 255, 71, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 255, 71, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
+}
+
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+/* BADGE */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(163, 255, 71, 0.08);
+  border: 1px solid rgba(163, 255, 71, 0.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.hero-badge::before {
+  /* content: ""; */
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* NAME */
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.hero-name span {
+  color: var(--accent);
+}
+
+/* ROLE */
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--muted);
+  margin-bottom: 2rem;
+  min-height: 2rem;
+}
+
+/* DESCRIPTION */
+.hero-desc {
+  max-width: 560px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+.hero-desc strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* BUTTONS */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #080c14;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  /* color: var(--accent); */
+
+  box-shadow: 0 12px 30px rgba(163, 255, 71, 0.3);
+}
+
+.hero .fade-up {
+  transition-delay: 0.1s;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  padding: 0.9rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ANIMATIONS */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.cursor-blink {
+  color: var(--accent);
+  animation: blink 0.9s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-bg-text {
+  position: absolute;
+  font-size: clamp(6rem, 18vw, 16rem);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-display);
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  line-height: 1;
+  top: 50%;
+  right: -2vw;
+  transform: translate(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.terminal-prefix {
+  color: var(--muted);
+  /* font-family: var(--font-mono); */
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+.stat-item h3 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-item p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem 4rem;
+  }
+  .stats {
+    gap: 2rem;
+  }
+  .bgText {
+    display: none;
+  }
+}

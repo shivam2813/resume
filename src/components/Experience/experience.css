@@ -1,0 +1,133 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.experience-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  left: -5vw;
+  right: -5vw;
+  top: 0;
+  bottom: 0;
+  background: rgba(163, 255, 71, 0.015);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.experience-item:hover::before {
+  opacity: 1;
+}
+
+/* LEFT */
+.experience-meta {
+  position: relative;
+}
+
+.experience-company {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.experience-period {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.experience-index {
+  position: absolute;
+  bottom: 0;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  user-select: none;
+}
+
+/* RIGHT */
+.experience-role {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.85rem;
+  color: var(--text);
+}
+
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.1rem;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: rgba(163, 255, 71, 0.07);
+  border: 1px solid rgba(163, 255, 71, 0.15);
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+
+.experience-bullets {
+  list-style: none;
+}
+
+.experience-bullets li {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--muted);
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 0.45rem;
+}
+
+.experience-bullets li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  top: 3px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .experience-index {
+    display: none;
+  }
+
+  .experience-item::before {
+    left: -1.5rem;
+    right: -1.5rem;
+  }
+}

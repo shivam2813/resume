@@ -1,33 +1,39 @@
-import React from "react";
-import Header from "./components/header";
-import Top from "./components/top";
-import Footer from "./components/footer";
-import Skills from "./components/skills";
-const Projects = React.lazy(() => import("./components/projects"));
-const Experience = React.lazy(() => import("./components/experience"));
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import Contact from "./components/Contact/Contact";
+import Projects from "./components/Projects/Projects";
+import Skills from "./components/Skills/Skills";
+import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
+import Experience from "./components/Experience/Experience";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("visible");
+        }),
+      { threshold: 0.1 },
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <section id="home">
-          <Top />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
 
-        <section id="experience">
-          <Experience />
-        </section>
-
-        <section id="projects">
-          <Projects />
-        </section>
-      </main>
+      <Projects />
+      <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
 
