@@ -24,10 +24,15 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       elevation={0}
+      className="nav"
       sx={{
         background: "rgba(8,12,20,0.7)",
         backdropFilter: "blur(12px)",
         borderBottom: "1px solid rgba(163,255,71,0.07)",
+        width: "100%", // ← add this
+        overflowX: "hidden", // ← add this
+        left: 0, // ← add this
+        right: 0, // ← add this
       }}
     >
       <Toolbar className="nav-container">
@@ -84,6 +89,7 @@ const Navbar = () => {
                 key={l}
                 href={`#${l.toLowerCase()}`}
                 onClick={() => setOpen(false)}
+                className="mobile-link"
               >
                 {l}
               </a>

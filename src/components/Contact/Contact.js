@@ -61,7 +61,7 @@ const Contact = () => {
   };
 
   return (
-    <Box component="section" id="contact" className="contact-section">
+    <Box component="section" id="contact" className="section">
       <div className="contact-inner">
         <div className="section-label">05 — Contact</div>
         <h2 className="section-title fade-up">Get In Touch</h2>

@@ -15,6 +15,7 @@
 
 /* GRID BACKGROUND */
 #hero::after {
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
@@ -55,7 +56,7 @@
 }
 
 .hero-badge::before {
-  /* content: ""; */
+  content: "";
   width: 6px;
   height: 6px;
   background: var(--accent);

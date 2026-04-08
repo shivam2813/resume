@@ -1,8 +1,14 @@
 /* layout */
+/* navbar.css */
 .nav-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem !important; /* override MUI's default padding */
 }
 
 /* logo */

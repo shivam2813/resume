@@ -15,6 +15,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -103,7 +105,7 @@ body {
 
 /* Noise overlay */
 body::before {
-  content: "";
+  /* content: ""; */
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,...");
@@ -165,5 +167,8 @@ body::before {
   .btn-outline {
     padding: 0.75rem 1.6rem;
     font-size: 0.85rem;
+  }
+  .section {
+    padding: 5rem 1.25rem;
   }
 }

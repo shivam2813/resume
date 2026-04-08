@@ -223,7 +223,7 @@
 
 /* TABLET */
 @media (max-width: 900px) {
-  .grid {
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem; /* fine */
   }
@@ -238,6 +238,7 @@
   .row {
     grid-template-columns: 1fr; /* FIXED */
   }
+
   .form,
   .input,
   .textarea {
