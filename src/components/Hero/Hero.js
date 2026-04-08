@@ -77,7 +77,7 @@ const Hero = () => {
 
   return (
     <Box component="section" id="hero" className="section">
-      <div className="hero-bg-text" aria-hidden="true">
+      <div className="hero-bgText" aria-hidden="true">
         SA
       </div>
 
