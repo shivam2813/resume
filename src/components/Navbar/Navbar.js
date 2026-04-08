@@ -18,8 +18,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // mobile check
-
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"), { noSsr: true });
+  console.log(isMobile);
   return (
     <AppBar
       position="fixed"
@@ -58,7 +58,7 @@ const Navbar = () => {
         )}
 
         {/* MOBILE MENU ICON */}
-        {isMobile && (
+        {isMobile === true && (
           <IconButton className="menu-icon" onClick={() => setOpen(true)}>
             <MenuIcon />
           </IconButton>

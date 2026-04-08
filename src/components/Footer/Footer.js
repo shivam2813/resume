@@ -1,58 +1,43 @@
-import { Container, Typography, Link, Grid } from "@mui/material";
 import "./footer.css";
 
-const Footer = () => {
+const personalInfo = {
+  name: "Shivam Arora",
+  initials: "SA",
+  role: "Frontend Developer",
+  email: "shivamarora1314@gmail.com",
+  linkedin: "https://www.linkedin.com/in/shivamarora1314/",
+  github: "https://github.com/shivam2813",
+};
+
+export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="footer">
-      <Container>
-        <Grid container spacing={6} className="footer-grid">
-          {/* Contact */}
-          <Grid item xs={12} md={6}>
-            <Typography variant="h6" className="footer-title">
-              Contact
-            </Typography>
+      <div className="footer-container">
+        {/* Left */}
+        <div className="footer-brand">
+          <span className="footer-logo">
+            {personalInfo.initials}
+            <span className="footer-dot">.</span>
+          </span>
 
-            <Typography className="footer-text">
-              shivamarora1314@gmail.com
-            </Typography>
-          </Grid>
-
-          {/* Links */}
-          <Grid item xs={12} md={6}>
-            <Typography variant="h6" className="footer-title">
-              Connect
-            </Typography>
-
-            <div className="footer-links">
-              <Link
-                href="https://www.linkedin.com/in/shivamarora1314/"
-                target="_blank"
-                underline="none"
-              >
-                LinkedIn
-              </Link>
-
-              <Link
-                href="https://github.com/shivam2813"
-                target="_blank"
-                underline="none"
-              >
-                GitHub
-              </Link>
-            </div>
-          </Grid>
-        </Grid>
-
-        <div className="footer-bottom">
-          <Typography variant="body2">
-            © {year} <span>Shivam Arora</span>. All rights reserved.
-          </Typography>
+          <p className="footer-copy">
+            © {year} <strong>Shivam Arora</strong>
+          </p>
         </div>
-      </Container>
+
+        {/* Right */}
+        <div className="footer-links">
+          <a href={personalInfo.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href={personalInfo.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a href={`mailto:${personalInfo.email}`}>Email</a>
+        </div>
+      </div>
     </footer>
   );
-};
-
-export default Footer;
+}

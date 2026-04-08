@@ -42,7 +42,7 @@ const Experience = () => {
   return (
     <Box component="section" id="experience" className="section">
       <div className="section-label">03 — Experience</div>
-      <div className="section-title fade-up">The person behind the code</div>
+      <h2 className="section-title fade-up">Where I've worked</h2>
       <div className="section-line"></div>
 
       <div className="experience-list">
